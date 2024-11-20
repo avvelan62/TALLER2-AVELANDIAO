@@ -2,10 +2,14 @@ from models.perro import Perro
 from models.gato import Gato
 from models.boa_constricutor import Boa_Constrictor
 from models.huron import Huron
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, render_template
 
 
 animal_blueprint = Blueprint('animal_bp', __name__, url_prefix="/animal")
+
+@animal_blueprint.route('/')
+def index():
+    return render_template("index.html")
 
 @animal_blueprint.route('/perro', methods=['GET'])
 def hacer_sonido_perro():
