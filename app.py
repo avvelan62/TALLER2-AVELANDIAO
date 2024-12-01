@@ -9,3 +9,6 @@ app.register_blueprint(animal_blueprint)
 @app.route('/')
 def home():
     return redirect(url_for('animal_bp.index')) 
+
+if __name__ == "__main__":
+    app.run()
